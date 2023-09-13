@@ -1,0 +1,14 @@
+{
+	"files": { "ignore": ["node_modules/*"] },
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded"
+		}
+	},
+	"json": {
+		"parser": {
+			"allowComments": true
+		}
+	},
+	"organizeImports": { "enabled": true }
+}

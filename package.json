@@ -1,0 +1,31 @@
+{
+  "name": "DevGPT-API",
+  "author": "February pabs",
+  "description": "API for DevGPT",
+  "scripts": {
+    "start": "bun run --watch src/index.ts",
+    "start:prod": "npm install -g pm2 && pm2 start bun --name \"devgpt_in_production\" -- start",
+    "restart:prod": "pm2 restart \"devgpt_in_production\"",
+    "stop:prod": "pm2 stop \"devgpt_in_production\"",
+    "delete:prod": "pm2 delete \"devgpt_in_production\"",
+    "monit": "pm2 monit",
+    "list": "pm2 list"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "dependencies": {
+    "@azure/openai": "^1.0.0-beta.5",
+    "@supabase/supabase-js": "^2.33.2",
+    "@types/express": "^4.17.17",
+    "connect-timeout": "^1.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "node-fetch": "^3.3.2",
+    "path": "^0.12.7",
+    "pm2": "^5.3.0"
+  }
+}
