@@ -27,9 +27,9 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-function haltOnTimedout(req, res, next){
-  if (!req.timedout) next();
-}
+const haltOnTimedout = (req: any, res: any, next: any) => {
+	if (!req.timedout) next();
+};
 
 const corsOptions = {
 	origin: "*",
@@ -39,7 +39,8 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
+app.use(express.json({ limit: "20mb" }));
+app.use(express.urlencoded({ limit: "20mb", extended: true }));
 app.use(timeout(120000));
 app.use(haltOnTimedout);
 
