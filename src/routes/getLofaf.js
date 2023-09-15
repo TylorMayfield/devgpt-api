@@ -7,7 +7,7 @@ import chunkAndMapToLLMPromise from "./chunkAndMapToLLMPromise";
 const getLofaf = Router();
 
 const MAX_LOFAF_CHUNK_SIZE = 100;
-const MAX_CHUNKS = 25;
+const MAX_CHUNKS = 5;
 
 getLofaf.post("/get-lofaf", async (req, res) => {
   const { prompt, directory, lofaf } = req.body;
