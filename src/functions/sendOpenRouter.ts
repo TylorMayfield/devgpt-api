@@ -35,12 +35,13 @@ const sendOpenRouter = async ({
 	);
 
 	return await response.json().then((data: any) => {
-
-        console.log({data});
+		if (data?.error) {
+			console.log("ERRORS:", data?.error);
+		} else { 
+			console.log("Ran a successful OpenRouter API call!")
+		}
+		
 		if (functions) {
-            console.log({functions});
-            
-            
 			return {
 				error: data?.error,
 				response: data?.choices[0].message.function_call.arguments,
